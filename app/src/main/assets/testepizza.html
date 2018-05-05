@@ -28,10 +28,53 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
+        window.alert("OI Test!");
+      }
+
+       function metodoWebView(vetor) {
+        window.alert("OI Test!");
+        var nomes = JSON.parse(vetor);
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          [nome[0],     11],
+          [nome[1],      2],
+          [nome[2],  2],
+          [nome[3], 2]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+      function metodoWebView2() {
+        var nomes = Android.metodoPonte();
+        data2 = JSON.parse(nomes);
+        var p = document.getElementById('p');
+        p.innerHTML = data2[0];
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          [data2[0],     11],
+          [data2[1],      5],
+          [data2[2],  2],
+          [data2[3], 4]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
       }
     </script>
   </head>
   <body>
-    <div class = "container" id="piechart" style="width: 900px; height: 500px;"></div>
+    <div  id="piechart" style="width: 900px; height: 500px;"></div>
+    <p id = "p">Jonnnn</p>
   </body>
 </html>
