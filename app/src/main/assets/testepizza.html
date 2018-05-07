@@ -55,13 +55,11 @@
         data2 = JSON.parse(nomes);
         var p = document.getElementById('p');
         p.innerHTML = data2[0];
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          [data2[0],     11],
-          [data2[1],      5],
-          [data2[2],  2],
-          [data2[3], 4]
-        ]);
+        valores = [['Task', 'Hours per Day']];
+        for(i = 0; i < data2.length; i++){
+          valores.push([data2[0],i + 1]);
+        }
+        var data = google.visualization.arrayToDataTable(valores);
 
         var options = {
           title: 'My Daily Activities'
