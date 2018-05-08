@@ -32,22 +32,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void teste(View view){
-        /*Log.d("Jonatas","kjkjhjk");
-        String nomes[] = new String[]{"Jonatas","Teste","Manoel","Lucia"};
-        final JSONArray jsonArray = new JSONArray();
-        try {
-            jsonArray.put(0,"Jonatas");
-            jsonArray.put(1,"Teste");
-            jsonArray.put(2,"Manoel");
-            jsonArray.put(3,"Lucia");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }*/
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 wb.loadUrl("javascript:metodoWebView2();");
-                //wb.loadUrl("javascript:drawChart();");
             }
         });
 
@@ -55,17 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
     @JavascriptInterface
     public String metodoPonte(){
-        String nomes[] = new String[]{"Jonatas","Teste","Manoel","Lucia"};
+        String nomes[] = new String[]{"Jonatas","5","Teste","3","Manoel","77","Lucia","48"};
         final JSONArray jsonArray = new JSONArray();
         try {
-            jsonArray.put(0,"Jonatas");
-            jsonArray.put(1,"Teste");
-            jsonArray.put(2,"Manoel");
-            jsonArray.put(3,"Lucia");
+            for (int i = 0; i < nomes.length; i++) {
+                jsonArray.put(i,nomes[i]);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d("TesteJ",jsonArray.toString());
         return jsonArray.toString();
 
     }

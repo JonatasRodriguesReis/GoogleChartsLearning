@@ -56,8 +56,8 @@
         var p = document.getElementById('p');
         p.innerHTML = data2[0];
         valores = [['Task', 'Hours per Day']];
-        for(i = 0; i < data2.length; i++){
-          valores.push([data2[0],i + 3]);
+        for(i = 0; i < data2.length; i += 2){
+          valores.push([data2[i],parseFloat(data2[i+1])]);
         }
         var data = google.visualization.arrayToDataTable(valores);
 
