@@ -50,11 +50,11 @@
 
         chart.draw(data, options);
       }
-      function metodoWebView2() {
-        var nomes = Android.metodoPonte();
-        data2 = JSON.parse(nomes);
+      function metodoWebView2(nomesTeste) {
+        //var nomes = Android.metodoPonte();
+        data2 = JSON.parse(nomesTeste);
         var p = document.getElementById('p');
-        p.innerHTML = data2[0];
+        p.innerHTML = nomesTeste;
         valores = [['Task', 'Hours per Day']];
         for(i = 0; i < data2.length; i += 2){
           valores.push([data2[i],parseFloat(data2[i+1])]);
