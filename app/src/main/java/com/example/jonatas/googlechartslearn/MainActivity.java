@@ -10,12 +10,19 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import com.google.gson.Gson;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+
+import model.DataValor;
 
 public class MainActivity extends AppCompatActivity {
     private WebView wb;
@@ -32,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void teste(View view){
-        final String t = "Jonatas Top";
+        /*final String t = "Jonatas Top";
         String nomes[] = new String[]{"Jonatas","5","Teste","3","Manoel","77","Lucia","48"};
         final JSONArray jsonArray = new JSONArray();
         try {
@@ -48,7 +55,31 @@ public class MainActivity extends AppCompatActivity {
 
                 wb.loadUrl("javascript:metodoWebView2('" + jsonArray.toString() +"');");
             }
+        });*/
+
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("http://" + getResources().getString(R.string.ip) + ":85/webserviceCharts/data/getAll.php",null,new JsonHttpResponseHandler(){
+
+            @Override
+            public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                try {
+                    final JSONArray datas = response.getJSONArray("records");
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            wb.loadUrl("javascript:metodoWebView2('" + datas.toString() +"');");
+                        }
+                    });
+                }  catch (JSONException e) {
+                    e.printStackTrace();
+
+                }
+
+            }
         });
+
 
     }
 
