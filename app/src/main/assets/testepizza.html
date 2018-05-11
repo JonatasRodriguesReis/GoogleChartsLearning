@@ -54,7 +54,7 @@
         //var nomes = Android.metodoPonte();
         data2 = JSON.parse(nomesTeste);
         var p = document.getElementById('p');
-        p.innerHTML = nomesTeste;
+        p.innerHTML = data2;
         valores = [['Task', 'Hours per Day']];
         for(i = 0; i < data2.length; i += 2){
           valores.push([data2[i],parseFloat(data2[i+1])]);
@@ -69,10 +69,33 @@
 
         chart.draw(data, options);
       }
+
+      function metodo(nomesTeste) {
+
+        var p = document.getElementById('p2');
+        data2 = JSON.parse(nomesTeste);
+        p.innerHTML = data2[0][0];
+
+        valores = [['Task', 'Hours per Day']];
+        for(i = 0; i < data2.length; i++){
+          valores.push([data2[i][0],parseFloat(data2[i][1])]);
+        }
+        var data = google.visualization.arrayToDataTable(valores);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+
+      }
     </script>
   </head>
   <body>
     <div  id="piechart" style="width: 900px; height: 500px;"></div>
     <p id = "p">Jonnnn</p>
+    <p id = "p2">Jonnnn</p>
   </body>
 </html>
