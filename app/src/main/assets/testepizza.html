@@ -22,13 +22,14 @@
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'My Daily Activities',
+          chartArea:{left:20,top:50,width:'100%',height:'75%'},
+          legend : {position: 'bottom', alignment:'center'}
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
-        window.alert("OI Test!");
       }
 
        function metodoWebView(vetor) {
@@ -43,7 +44,9 @@
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'My Daily Activities',
+          chartArea:{left:20,top:50,width:'100%',height:'75%'},
+          legend : {position: 'bottom', alignment:'center'}
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -62,7 +65,9 @@
         var data = google.visualization.arrayToDataTable(valores);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'My Daily Activities',
+          chartArea:{left:20,top:50,width:'100%',height:'75%'},
+          legend : {position: 'bottom', alignment:'center'}
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -83,7 +88,9 @@
         var data = google.visualization.arrayToDataTable(valores);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'My Daily Activities',
+          chartArea:{left:20,top:50,width:'100%',height:'75%'},
+          legend : {position: 'bottom', alignment:'center'}
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -94,7 +101,7 @@
     </script>
   </head>
   <body>
-    <div  id="piechart" style="width: 900px; height: 500px;"></div>
+    <div  id="piechart" style="padding: 0px; width: 100%; height: 500px;"></div>
     <p id = "p">Jonnnn</p>
     <p id = "p2">Jonnnn</p>
   </body>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LineActivity">
 
     <WebView
         android:id="@+id/webCharts"
@@ -13,20 +13,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
 
-
     </WebView>
-
-    <Button
-        android:id="@+id/btnCurva"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/btn"
-        android:layout_marginStart="128dp"
-        android:text="Line"
-        android:onClick="verCurva"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/btn"
@@ -36,8 +23,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="13dp"
         android:layout_marginTop="14dp"
-        android:onClick="teste"
-        android:text="View" />
-
-
+        android:onClick="metodoPonte"
+        android:text="Button" />
 </RelativeLayout>
